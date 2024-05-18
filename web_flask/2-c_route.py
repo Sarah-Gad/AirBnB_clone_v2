@@ -17,10 +17,10 @@ def hbnbpage():
 
 
 @my_airbnb_app.route("/c/<text>", strict_slashes=False)
-def c_page(text):
+def cpage(text):
     """This function will be called when the used access this url /c/<text>"""
-    converted_txt = text.replace('_', ' ')
-    return f"c {converted_txt}"
+    text = text.replace("_", " ")
+    return "C {}".format(text)
 
 
 if __name__ == "__main__":
