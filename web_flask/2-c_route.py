@@ -16,7 +16,7 @@ def hbnbpage():
     return "HBNB"
 
 
-@my_airbnb_app.route("/c/<text>")
+@my_airbnb_app.route("/c/<text>", strict_slashes=False)
 def c_page(text):
     """This function will be called when the used access this url /c/<text>"""
     converted_txt = text.replace('_', ' ')

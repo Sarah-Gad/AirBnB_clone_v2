@@ -10,7 +10,7 @@ def hellopage():
     return "Hello HBNB!"
 
 
-@my_airbnb_app.route("/hbnb")
+@my_airbnb_app.route("/hbnb", strict_slashes=False)
 def hbnbpage():
     """This fucntion will be called when the user access this url /hbnb"""
     return "HBNB"
