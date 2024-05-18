@@ -20,7 +20,7 @@ def hbnbpage():
 def c_page(text):
     """This function will be called when the used access this url /c/<text>"""
     converted_txt = text.replace('_', ' ')
-    return "c {}".format(converted_txt)
+    return f"c {converted_txt}"
 
 
 if __name__ == "__main__":
