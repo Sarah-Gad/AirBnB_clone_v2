@@ -6,5 +6,7 @@ my_airbnb_app = Flask(__name__)
 def hellopage():
     """This function will be called when the user access the root url"""
     return "Hello HBNB!"
+
+
 if __name__ == "__main__":
     my_airbnb_app.run(host='0.0.0.0', port=5000)
