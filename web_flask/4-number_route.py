@@ -31,11 +31,11 @@ def pythonpage(text="is cool"):
     return "Python {}".format(converted_txt)
 
 
-@my_airbnb_app.route("/number/<n>", strict_slashes=False)
+@my_airbnb_app.route("/number/<int:n>", strict_slashes=False)
 def numberpage(n):
     """This function will be called when user access the url /number/<n>"""
-    if n.isdigit():
-        return "{} is a number".format(n)
+    return "{} is a number".format(n)
+
 
 if __name__ == "__main__":
     my_airbnb_app.run(host='0.0.0.0', port=5000)
