@@ -2,22 +2,22 @@
 """This script will start the falsk web application for my HBNB project"""
 from flask import Flask, render_template
 from models import storage
-app = Flask(__name__)
+my_airnbn_app = Flask(__name__)
 
 
-@app.route("/states_list", strict_slashes=False)
+@my_airnbn_app.route("/states_list", strict_slashes=False)
 def listing_states():
     """This function will be called when the
     user access this url /states_list"""
-    states = storage.all("State")
-    return render_template("7-states_list.html", states=states)
+    allstates = storage.all("State").values()
+    return render_template("7-states_list.html", passed_states=allstates)
 
 
-@app.teardown_appcontext
-def teardown(excep):
+@my_airnbn_app.teardown_appcontext
+def closingst(excep):
     """This function will be called at the end of each request"""
     storage.close()
 
 
 if __name__ == '__main__':
-   app.run(host='0.0.0.0', port=5000)
+    my_airnbn_app.run(host='0.0.0.0', port=5000)
